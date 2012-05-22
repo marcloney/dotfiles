@@ -1,0 +1,9 @@
+function parse_git_dirty() {
+  [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] && echo "*"
+}
+
+function parse_git_branch() {
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
+}
+
+PS1="\[${GREEN}\]\u@\[$GREEN\]\h\[$WHITE\]:\[$EGREEN\]\w\[$EWHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" \")\[$PURPLE\]\$(parse_git_branch)\[$EWHITE\]\$ \[$RESET\]"

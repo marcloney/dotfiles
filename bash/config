@@ -37,4 +37,4 @@ BBLUE='\e[44m'
 BMAGENTA='\e[45m'
 BCYAN='\e[46m'
 BWHITE='\e[47m'
-
+RESET="\033[m"
