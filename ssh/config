@@ -1,0 +1,4 @@
+Host server3
+  HostName server3.concisecreative.com.au
+  User root
+  Port 22

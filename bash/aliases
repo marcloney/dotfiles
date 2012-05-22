@@ -1,0 +1,30 @@
+# Utility
+alias reload='source ~/bin/dotfiles/bash/aliases'
+alias ea='vim ~/bin/dotfiles/bash/aliases && reload' # Edit aliases
+alias ee="vim ~/bin/dotfiles/bash/env"
+
+#Common
+alias h='history'
+
+# Processes
+alias tu='top -o cpu' # cpu
+alias tm='top -o vsize' # memory
+
+#Git
+
+alias gco='git checkout'
+alias gd='git diff'
+alias gs="git status"
+alias ga="git add ."
+function gc() { 
+    git commit -am "$*"
+}
+
+alias gpl='git push local master'
+alias gpd='git push dev master'
+alias gps='git push stable master'
+alias gph='git push heroku master'
+
+function xbox() {
+	sudo /etc/init.d/ushare $1
+}
