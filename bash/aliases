@@ -6,7 +6,7 @@ alias ee="vim ~/bin/dotfiles/bash/env"
 # Navigation
 alias ..='cd ..'
 alias cd..='cd ..'
-alias ls='ls --color'
+alias ls='ls --color --all'
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
