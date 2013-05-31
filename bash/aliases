@@ -4,6 +4,7 @@ alias ea='vim ~/bin/dotfiles/bash/aliases && reload' # Edit aliases
 alias ee="vim ~/bin/dotfiles/bash/env"
 
 # Navigation
+alias ~='cd ~'
 alias ..='cd ..'
 alias cd..='cd ..'
 alias ls='ls --color --all'
