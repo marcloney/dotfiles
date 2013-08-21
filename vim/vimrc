@@ -35,6 +35,9 @@ set nobackup                      " Don't make a backup before overwriting a fil
 set nowritebackup                 " And again.
 set directory=$HOME/.vim/tmp//,.  " Keep swap files in one location
 
+" Set console to 256 colors
+set t_Co=256
+
 "Set tab width
 set tabstop=2                    " Global tab width.
 set shiftwidth=2                 " And again, related.
@@ -56,6 +59,12 @@ map <leader>tp :tabprevious<cr>
 map <leader>tf :tabfirst<cr>
 map <leader>tl :tablast<cr>
 map <leader>tm :tabmove
+
+" MiniBuffExplorer configuration.
+let g:miniBufExplMapWindowNavVim = 1 
+let g:miniBufExplMapWindowNavArrows = 1 
+let g:miniBufExplMapCTabSwitchBufs = 1 
+let g:miniBufExplModSelTarget = 1
 
 " Syntastic configuration.
 let g:syntastic_mode_map = { 'mode': 'active',
