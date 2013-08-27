@@ -60,14 +60,10 @@ map <leader>tf :tabfirst<cr>
 map <leader>tl :tablast<cr>
 map <leader>tm :tabmove
 
-" MiniBuffExplorer configuration.
-let g:miniBufExplMapWindowNavVim = 1 
-let g:miniBufExplMapWindowNavArrows = 1 
-let g:miniBufExplMapCTabSwitchBufs = 1 
-let g:miniBufExplModSelTarget = 1
-
 " Syntastic configuration.
 let g:syntastic_mode_map = { 'mode': 'active',
   \ 'active_filetypes': [],
   \ 'passive_filetypes': ['html'] }
 let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_error_symbol = '✗'
+let g:syntastic_warning_symbol = '!'
