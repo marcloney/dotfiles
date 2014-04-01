@@ -1,62 +1,60 @@
-# Concise Creative hosts
-
-Host server3.concisecreative.com.au
-  HostName server3.concisecreative.com.au
-  User root
-  Port 22
-
-Host server1.concisecreative.com.au
-  HostName 114.111.153.106
-  User root
-  Port 222
-
 # Bam Creative hosts
 
-Host uweb1.bbhost.com.au
+Host uweb1
   HostName uweb1.bbhost.com.au
   User marc
   Port 22
 
-Host uweb2.bbhost.com.au
-  HostName uweb2.bbhost.com.au
-  User marc
-  Port 22
-
-Host uweb3.bbhost.com.au
+Host uweb3
   HostName uweb3.bbhost.com.au
   User marc
   Port 22
 
-Host dev1.bam.com.au
+Host dev1
   HostName dev1.bam.com.au
   User marc
   Port 22
 
-Host pl1.bam.com.au
+Host dev2
+  HostName dev2.bam.com.au
+  User marc
+  Port 22
+
+Host pl1
   HostName pl1.bam.com.au
   User marc
   Port 22
 
-Host pl2.bam.com.au
+Host pl2
   HostName pl2.bam.com.au
   User marc
   Port 22
 
-Host pl3.bam.com.au
+Host pl3
   HostName pl3.bam.com.au
+  User marc
+  Port 22
+
+Host pl5
+  HostName pl5.bam.com.au
   User marc
   Port 22
 
 # Shatter Stats hosts
 
-Host dev.shatterstats.com
+Host shatterstats
   HostName dev.shatterstats.com
   User chillfactor
   Port 22
 
 # Marc Loney hosts
 
-Host msblaster.marcloney.com
+Host msblaster
   HostName msblaster.marcloney.com
+  User marcloney
+  Port 22
+
+Host marcloney
+  HostName marcloney.com
   User marcloney
   Port 22
