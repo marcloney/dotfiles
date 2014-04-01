@@ -8,7 +8,7 @@ if [ -f /etc/bash_completion ]; then
   source /etc/bash_completion
 fi
 
-for file in ~/bin/dotfiles/bash/{env,config,prompt,aliases,extra}; do
+for file in ~/bin/dotfiles/bash/{env,config,prompt,aliases,extra,ssh}; do
   [ -r "$file" ] && source "$file"
 done
 unset file
