@@ -7,7 +7,7 @@ alias ee="vim ~/bin/dotfiles/bash/env"
 alias ~='cd ~'
 alias ..='cd ..'
 alias cd..='cd ..'
-alias ls='ls --color --all'
+alias ls='ls --color --all -h --group-directories-first'
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
@@ -23,11 +23,15 @@ alias h='history'
 alias tu='top -o cpu' # cpu
 alias tm='top -o vsize' # memory
 
-#Git
+# Git
 alias gco='git checkout'
 alias gd='git diff'
 alias gs="git status"
 alias ga="git add ."
+alias gpl='git push local master'
+alias gpd='git push dev master'
+alias gps='git push stable master'
+alias gph='git push heroku master'
 function gc() { 
   git commit -am "$*"
 }
@@ -35,17 +39,52 @@ function g() {
   git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
 }
 
-alias gpl='git push local master'
-alias gpd='git push dev master'
-alias gps='git push stable master'
-alias gph='git push heroku master'
+# Subversion
+alias sd='svn diff'
+alias ss='svn status $*'
+alias si='svn info'
+alias sup='svn update'
+alias sa='svn add $*'
+function sl() {
+    svn log -r HEAD:BASE -v -l $*
+}
+function sc() {
+  svn commit -m "Marc: $*"
+}
+function sh() {
+    url=$1 # current url of file
+    svn log -q $url | grep -E -e "^r[[:digit:]]+" -o | cut -c2- | sort -n | {
+        echo
+        read r
+        svn log -r$r $url@HEAD
+        svn cat -r$r $url@HEAD
+        echo
 
-#Functions
-function xbox() {
-	sudo /etc/init.d/ushare $1
+        while read r
+        do
+            echo
+            svn log -r$r $url@HEAD
+            svn diff -c$r $url@HEAD
+            echo
+        done
+    }
 }
 
-extract () {
+# Deployment
+function deploy() {
+      sudo rm releases/backup
+      sudo mv public_html releases/backup
+      sudo cp -d staging_html public_html
+      sudo chown -R --reference=staging_html public_html
+}
+
+function rollback() {
+      sudo rm public_html
+      sudo cp –R releases/backup public_html
+}
+
+# Functions
+function extract() {
   if [ -f $1 ] ; then
     case $1 in
       *.tar.bz2) tar xjf $1 ;;
