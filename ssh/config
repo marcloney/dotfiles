@@ -35,6 +35,11 @@ Host pl3
   User marc
   Port 22
 
+Host pl4
+  HostName pl4.bam.com.au
+  User marc
+  Port 22
+
 Host pl5
   HostName pl5.bam.com.au
   User marc
